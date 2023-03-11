@@ -527,7 +527,6 @@ class Script(scripts.Script):
 
         create_button.click(fn=create_canvas, inputs=[canvas_height, canvas_width], outputs=[input_image])
         annotator_button.click(fn=run_annotator, inputs=[input_image, module, processor_res, threshold_a, threshold_b], outputs=[generated_image])
-        annotator_button_hide.click(fn=lambda: gr.update(visible=False), inputs=None, outputs=[generated_image])
 
         if is_img2img:
             send_dimen_button.click(fn=send_dimensions, inputs=[input_image], outputs=[self.img2img_w_slider, self.img2img_h_slider])
